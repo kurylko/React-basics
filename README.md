@@ -208,7 +208,11 @@ if(testScore > 50) {
 } else {
  console.log('You need to retake the test') }
  ```
-
+ 
+**In React, you can conditionally render components by using:**
+- if Statement
+- Logical && Operator
+- Ternary Operator.
 
 Conditional rendering in React works the same way conditions work in JavaScript. 
 Use JavaScript operators like if or the conditional operator to create elements representing the current state, 
