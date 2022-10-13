@@ -3,6 +3,17 @@
 React is **an open-source, front-end JavaScript library** built/maintained in 2013 by Facebook as well as a community of individual developers and companies.
 It's purpose is to build user interfaces or UI components.
 
+#### React uses ES6, and you should be familiar with some of the new features like: ####
+
+- Classes
+- Arrow Functions
+- Variables (let, const, var)
+- Array Methods like .map()
+- Destructuring
+- Modules
+- Ternary Operator
+- Spread Operator
+
 React creates a VIRTUAL DOM in memory. Instead of manipulating the browser's DOM directly, React creates a virtual DOM in memory, 
 where it does all the necessary manipulating, before making the changes in the browser DOM.
 
@@ -10,12 +21,25 @@ where it does all the necessary manipulating, before making the changes in the b
 
 **JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement()  and/or appendChild() methods.**
 
-## Let's create first React project ##
+## Setting up a React Environment ##
 
 To use React in production, you need **npm which is included with Node.js.**
 
 
 If you have npx and Node.js installed, you can create a React application by using create-react-app.
+
+You can run the following command to see if it is already installed for your current npm version:
+
+```
+$ which npx
+```
+If it's not, you can install it like this:
+
+```
+$ npm install -g npx
+```
+
+To create a React application by using create-react-app: 
 
 ```
 npx create-react-app my-react-app
@@ -23,7 +47,6 @@ npx create-react-app my-react-app
 
 The create-react-app will set up everything you need to run a React application.
 
-Run the React Application
 Now you are ready to run your first real React application!
 
 Run this command to move to the my-react-app directory:
@@ -37,8 +60,13 @@ npm start
 ```
 A new browser window will pop up with your newly created React App! If not, open your browser and type localhost:3000 in the address bar.
 
-Look in the my-react-app directory, and you will find a src folder. 
-Inside the src folder there is a file called **App.js.**
+**Within React there is a Hierarchy that occurs when building and scaling our applications.**
+
+Typically in most apps, we have a Root Component called **App** this is where all other components end up reaching through the component tree.
+
+Look in the my-react-app directory, and you will find a **src** folder. Inside the src folder there is a file called **App.js.**
+
+When Components are contained within other Components higher up the tree, these are known as Parent and Child relationships.
 
 
 ## React component ##
