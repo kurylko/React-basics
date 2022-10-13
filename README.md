@@ -66,7 +66,11 @@ Typically in most apps, we have a Root Component called **App** this is where al
 
 Look in the my-react-app directory, and you will find a **src** folder. Inside the src folder there is a file called **App.js.**
 
-When Components are contained within other Components higher up the tree, these are known as Parent and Child relationships.
+You can add a child component (ex. Contacts) inside the App Component. 
+
+When Components are contained within other Components higher up the tree, these are known as **Parent and Child relationships.** 
+
+**❗️Worth Mentioning that all components can be parents or children of another component (except app, which only can be the parent).❗️**
 
 
 ## React component ##
@@ -81,7 +85,7 @@ There are 2 types of React components:
 
 They return JSX and this JSX is rendered in the browser as DOM. 
 
-Worth mentioning you can define the component using a function declaration or a function expression.
+**Worth mentioning you can define the component using a function declaration or a function expression.**
 
 ```
 function MyComponent() {
@@ -174,6 +178,50 @@ export const App = (
 
 ## Expressions and Statements within JSX ##
 
+### An expression is something that returns a value. ###
+
+```
+const isOnline = true;
+```
+
+```
+isOnline ? "User is Online" : "User is Offline"
+```
+
+```
+const numbers = [1, 4, 9, 16];
+/ pass a function to map
+const numbersMultipliedBy2 = numbers.map(number => number * 2);
+console.log(numbersMultipliedBy2);
+// expected output: Array [2, 8, 18, 32]
+```
+
+
+### A statement is something that performs or controls one or more actions but it does not return a value. ###
+
+The first example of a statement is a control structure such as a simple if / else.
+
+```
+const testScore = 60;
+if(testScore > 50) {
+ console.log('You have passed the test')
+} else {
+ console.log('You need to retake the test') }
+ ```
+
+
+Conditional rendering in React works the same way conditions work in JavaScript. 
+Use JavaScript operators like if or the conditional operator to create elements representing the current state, 
+and let React update the UI to match them.
+
+
+The second example of a statement is a control structure such as a simple for loop.
+
+```
+for (i = 0; i < 5; i++) {
+  console.log(`The current number in the loop is ${[i]}`)
+}
+```
 
 
 
