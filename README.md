@@ -227,6 +227,123 @@ for (i = 0; i < 5; i++) {
 }
 ```
 
+**❗️JSX only allows you to insert expressions between curly braces, not statements.❗**
+
+This is a common error message: **Parsing error: Unexpected token**
+
+means that React can't analyse the program properly because it encounters an unexpected character, 
+precisely where the if is located.
+
+## Importing & Exporting Components in React ##
+
+- There should only be one App component and this will contain all of your React Components & Pages.
+- The index.js file is the entry point into the DOM.
+- When creating components always create a components folder within the src folder and store all of your components there.
+- Any other component apart from App is reusable and can be imported and reused anywhere across your entire application.
+- Any file that you would like React to use - e.g CSS files - must be within the src folder. Otherwise React will not be able to read it.
+- The public folder contains our index.html with the root div. Which is where our React application will be injected into.
+
+### Importing Components / Node Modules ###
+
+**When importing React or ReactDOM.**
+
+- These are stored within the node_modules folder. Hence the following syntax: import React from "react";
+- You don't need to specify the path after from as React will recognise you are trying to use a node module.
+- This rule applies for every node module used within the application.
+ 
+If you are importing a component or any other file, e.g. the  WelcomeMessage component, the import would have the following syntax: import WelcomeMessage from "./components/WelcomeMessage";`
+In this case, we are referencing a path to a file within the src folder.
+We need to specify the full path in this situation e.g. "./components/WelcomeMessage".
+
+## Handling Events ##
+
+- The id and type attributes can be retrieved using event.target.id and event.target.type respectively.
+- You might have expected to be able to access the class via: event.target.class. But since class is a reserved word in JavaScript word, the HTML class attribute becomes className in the DOM (which also explains why React needs classes to be declared using className).
+- Finally, the text content of the button is also an attribute: event.target.innerText.
+
+```
+export default function App() {
+ const logging = message => {
+   console.log(message);
+ };
+ 
+ return (
+   <div className="App">
+     <button onClick={() => logging('I clicked')}>Click Me !</button>
+ 
+     <p>↓ Console down here</p>
+   </div>
+ );
+}
+```
+
+This example below shows how to manage a button click in React.
+We have assigned an  onClick attribute. It is exactly the same event listener as for the DOM version.
+
+React supports the addition of an "event listener" which detects the DOM click event on an element, by using the onClick attribute.
+
+for a "simple" event name (**click, change, submit**), the first letter is **capitalised**, and everything is placed behind the lowercase prefix on
+click → onClick,
+change → onChange,
+submit → onSubmit,
+etc.
+
+The same goes for a "compound name" (**mouseenter = “mouse enter”**), but here **the first letter of each word in the event name is capitalised:**
+mouseenter → onMouseEnter,
+mouseleave → onMouseLeave,
+etc.
+
+## States ##
+
+The state of the application stores all the dynamic data of the application.
+
+If this data is updated, the User Interface will automatically be updated.
+
+```
+const [state, setState] = React.useState('initialValue');
+```
+
+**useState** will return a value and a function to update this value. We use array destructuring to create one variable for each of the returned items.
+
+**useState is the hook** used to manage the state in React. It should be used to manage dynamic data.
+
+**useState** takes the default value in argument and returns an array. 
+
+```
+export default function App() {
+  const [name, setName] = React.useState("Mary Poppins");
+  return (
+    <div className="App">
+      <h1>Hello, {name}!</h1>
+      <button onClick={() => setName("Harry Potter")}>Change name</button>
+    </div>
+  );
+}
+```
+
+The first element of the returned array is the value of the state and the second element is a function that we can call to update that value.
+ 
+We can use array destructuring to make the code cleaner
+
+
+## Filtering the display of a list ##
+
+**When you want to display a filtered list, the principle is always the same**:
+- First of all, eliminating elements that do not meet a given criteria, with filter
+- Then, applying map to repeat a component corresponding to each of the remaining elements
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
