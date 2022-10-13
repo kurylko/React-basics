@@ -330,10 +330,30 @@ We can use array destructuring to make the code cleaner
 
 **When you want to display a filtered list, the principle is always the same**:
 - First of all, eliminating elements that do not meet a given criteria, with filter
+
+```
+(student) => student.note >= 10
+```
+
+The function applied by filter can therefore be written as:
+
+```
+(student) => !showFailedOnly || student.note < 10
+```
+
 - Then, applying map to repeat a component corresponding to each of the remaining elements
 
+```
+studentList.filter((student) => student.note >= 10).map(/* ... */)
+```
 
-
+```
+{studentList.filter((student) => !showFailedOnly || student.note < 10).map((student, index) => (
+  <li key={index}>
+    Name: {student.name} Note: {student.note}
+  </li>
+))}
+```
 
 
 
