@@ -74,6 +74,17 @@ When Components are contained within other Components higher up the tree, these 
 
 
 ## React component ##
+
+React components are JavaScript functions that return markup:
+
+```
+function MyButton() {
+  return (
+    <button>I'm a button</button>
+  );
+}
+```
+
 **React component  is an independent and reusable piece of code.**
 
 
@@ -256,6 +267,8 @@ In this case, we are referencing a path to a file within the src folder.
 We need to specify the full path in this situation e.g. "./components/WelcomeMessage".
 
 ## Handling Events ##
+
+You can respond to events by declaring event handler functions inside your components:
 
 - The id and type attributes can be retrieved using event.target.id and event.target.type respectively.
 - You might have expected to be able to access the class via: event.target.class. But since class is a reserved word in JavaScript word, the HTML class attribute becomes className in the DOM (which also explains why React needs classes to be declared using className).
