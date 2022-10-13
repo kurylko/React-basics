@@ -3,6 +3,44 @@
 React is **an open-source, front-end JavaScript library** built/maintained in 2013 by Facebook as well as a community of individual developers and companies.
 It's purpose is to build user interfaces or UI components.
 
+React creates a VIRTUAL DOM in memory. Instead of manipulating the browser's DOM directly, React creates a virtual DOM in memory, 
+where it does all the necessary manipulating, before making the changes in the browser DOM.
+
+✅ JSX allows us to write HTML in React. 
+
+**JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement()  and/or appendChild() methods.**
+
+## Let's create first React project ##
+
+To use React in production, you need **npm which is included with Node.js.**
+
+
+If you have npx and Node.js installed, you can create a React application by using create-react-app.
+
+```
+npx create-react-app my-react-app
+```
+
+The create-react-app will set up everything you need to run a React application.
+
+Run the React Application
+Now you are ready to run your first real React application!
+
+Run this command to move to the my-react-app directory:
+```
+cd my-react-app
+```
+Run this command to run the React application my-react-app:
+
+```
+npm start
+```
+A new browser window will pop up with your newly created React App! If not, open your browser and type localhost:3000 in the address bar.
+
+Look in the my-react-app directory, and you will find a src folder. 
+Inside the src folder there is a file called **App.js.**
+
+
 ## React component ##
 **React component  is an independent and reusable piece of code.**
 
@@ -99,6 +137,15 @@ export const App = (
   </div>
 );
 ``` 
+
+- If you don't pass any props from the parent, the props object will be an empty object.
+- Props are read-only.
+- Props can be of any type string, function, number, etc.
+- Props is an object with key-value pairs.
+
+
+## Expressions and Statements within JSX ##
+
 
 
 
